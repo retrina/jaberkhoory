@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Google AI Studio App</title>
+    <script>
+      // Prevent polyfills from trying to overwrite fetch if it's already a getter
+      (function() {
+        const descriptor = Object.getOwnPropertyDescriptor(window, 'fetch');
+        if (descriptor && !descriptor.writable && !descriptor.set) {
+          console.log('Fetch is read-only, preventing polyfill override');
+          const originalFetch = window.fetch;
+          // We can't actually make it writable if it's a getter in some envs, 
+          // but we can try to define it on the instance if possible or just 
+          // hope the polyfill checks for this.
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+

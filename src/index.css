@@ -1,0 +1,56 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Vazirmatn:wght@300;400;500;600;700&display=swap');
+
+@theme {
+  --font-sans: "Vazirmatn", "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-farsi: "Vazirmatn", sans-serif;
+  --font-display: "Inter", sans-serif;
+  
+  --color-brand-primary: #2563eb;
+  --color-brand-secondary: #0f172a;
+  --color-bg-soft: #f8fafc;
+  --color-border-subtle: rgba(0, 0, 0, 0.05);
+}
+
+body {
+  @apply antialiased font-farsi bg-white text-slate-900;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #e2e8f0;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #cbd5e1;
+}
+
+/* Reset tracking for Arabic/Persian text as it breaks connections */
+[dir="rtl"] {
+  letter-spacing: 0 !important;
+}
+
+.font-farsi {
+  font-family: "Vazirmatn", sans-serif;
+  line-height: 1.7;
+}
+
+.glass-card {
+  @apply bg-white/80 backdrop-blur-md border border-white/20 shadow-xl;
+}
+
+.section-title {
+  @apply text-4xl lg:text-5xl font-bold tracking-tight mb-4;
+}
+
+[dir="rtl"] .tracking-tight,
+[dir="rtl"] .tracking-tighter,
+[dir="rtl"] .tracking-widest {
+  letter-spacing: 0 !important;
+}
